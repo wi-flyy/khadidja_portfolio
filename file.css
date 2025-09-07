@@ -488,8 +488,17 @@ h1 span{
   background: #c71752;
 }
 .contact-left img {
-  max-width: 280px;   
+  max-width: 300px;   
   height: auto;      
   padding-bottom: 60px; 
   padding-left: 0px;
  }
+
+/* -----------------------the input validation------------------------------------------------------------- */
+.error {
+ color: red;
+ font-size: 0.9em;
+ margin-bottom: 10px;
+}
+
+/* -----------------------the animation------------------------------------------------------------- */
