@@ -44,4 +44,54 @@
 });
 
 
+//the form validation part in js:
+
+ const form = document.getElementById("contactForm");
+
+  form.addEventListener("submit", function(event) {
+    let valid = true;
+
+    // clear errors
+    document.getElementById("nameError").innerText = "";
+    document.getElementById("surnameError").innerText = "";
+    document.getElementById("emailError").innerText = "";
+    document.getElementById("messageError").innerText = "";
+
+    // Name
+    const name = document.getElementById("name").value.trim();
+    if (name === "") {
+      document.getElementById("nameError").innerText = "Name is required.";
+      valid = false;
+    }
+    
+    // Name
+    const surname = document.getElementById("surname").value.trim();
+    if (surname === "") {
+      document.getElementById("surnameError").innerText = "surname is required.";
+      valid = false;
+    }
+
+    // Email
+    const email = document.getElementById("email").value.trim();
+    const emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+    if (email === "") {
+      document.getElementById("emailError").innerText = "Email is required.";
+      valid = false;
+    } else if (!email.match(emailPattern)) {
+      document.getElementById("emailError").innerText = "Enter a valid email.";
+      valid = false;
+    }
+
+    // Message
+    const message = document.getElementById("message").value.trim();
+    if (message === "") {
+      document.getElementById("messageError").innerText = "Message is required.";
+      valid = false;
+    }
+
+    // Stop submission if invalid
+    if (!valid) {
+      event.preventDefault();
+    }
+  });
 
